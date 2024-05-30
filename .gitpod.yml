@@ -17,6 +17,7 @@ tasks:
 
     command: echo 'start script'
   - init: echo 'no other'
+    openMode: split-right
   - name: Script Task
     init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
     command: echo 'start script'
