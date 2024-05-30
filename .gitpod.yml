@@ -1,0 +1,31 @@
+# Image of workspace. Learn more: https://www.gitpod.io/docs/configure/workspaces/workspace-image
+image: docker.io/gitpod/workspace-full:latest
+
+# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
+tasks:
+  - command: echo 'no prebuild'
+  - name: My Task
+    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
+    command: echo 'start script'
+  - init: |
+      echo 'no name'
+      echo 'no name'
+      echo 'no name'
+      echo 'no name' # super long comment here as well. Maybe this can be shortened but then on the otherhand I like it being long as it allows for testing how this gets rendered on the UI
+      echo 'quite long'
+      echo 'no name'
+
+    command: echo 'start script'
+  - init: echo 'no other'
+  - name: Script Task
+    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
+    command: echo 'start script'
+
+# List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
+ports:
+  - name: Frontend
+    description: Port 3000 for the frontend
+    port: 3000
+    onOpen: open-preview
+
+# Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
